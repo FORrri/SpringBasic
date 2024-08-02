@@ -1,0 +1,22 @@
+package com.simple.basic.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.simple.basic.command.LoginVo;
+
+
+@Controller
+@RequestMapping("/quiz")
+public class QuizController {
+	
+	@RequestMapping(value="/quiz01", method=RequestMethod.POST)
+	public String quiz01(@ModelAttribute("info") LoginVo vo) {
+		
+		System.out.println(vo.toString());
+		
+		return "quiz/quiz01";
+	}
+}

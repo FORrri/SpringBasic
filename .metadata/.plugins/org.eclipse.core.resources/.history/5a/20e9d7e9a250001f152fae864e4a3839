@@ -1,0 +1,17 @@
+package com.simple.basic.service.score.impl;
+
+import org.springframework.stereotype.Repository;
+
+import com.simple.basic.command.ScoreVO;
+
+@Repository("y")
+public class ScoreDAOImpl implements ScoreDAO {
+
+	@Override
+	public void regist(ScoreVO vo) {
+		System.out.println("repository layer:" + vo);
+	}
+
+
+
+}

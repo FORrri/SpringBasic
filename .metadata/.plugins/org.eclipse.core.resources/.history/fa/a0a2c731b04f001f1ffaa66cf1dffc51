@@ -1,0 +1,20 @@
+package ex02.constructor;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		//자바문법
+//		Hotel hotel = new Hotel(new Chef()); //호텔은 쉐프가 있어야함
+//		hotel.getChef().cooking();
+		
+		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("applicaiont-context.xml");
+		
+		ctx.getBean("hotel");
+		
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+package ex04.quiz;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+
+		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
+		
+		Computer com = ctx.getBean("computer", Computer.class);
+		System.out.println( com.getComputer().computerInfo());
+
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.simple.basic.command;
+
+import java.util.ArrayList;
+
+public class MemberVO { //value object (=DTO와 비슷함)
+	
+	private String id;
+	private String pw;
+	private ArrayList<String> inter;
+	
+	public MemberVO() {
+		
+	}
+	
+	
+	
+}

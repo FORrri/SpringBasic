@@ -1,0 +1,19 @@
+package com.simple.basic.service.score;
+
+import org.springframework.stereotype.Service;
+
+import com.simple.basic.command.ScoreVO;
+
+@Service("x") //구현체에다가 서비스 적어주기 //반드시 component-scan에 의하여 읽혀야함
+public class ScoreServiceImpl implements ScoreService {
+
+	@Override
+	public void regist(ScoreVO vo) {
+		//DAO계층으로....
+		System.out.println("service layer:" + vo);
+		
+	}
+
+	
+	
+}

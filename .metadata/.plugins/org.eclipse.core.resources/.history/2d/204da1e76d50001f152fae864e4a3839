@@ -1,0 +1,22 @@
+package com.simple.basic.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/request") //이 컨트롤러 모든 요청경로 앞에 /request를 붙이겠다
+public class RequestController {
+	
+	@RequestMapping("/req_ex01")
+	public void ex01() {
+	}
+	
+	
+	
+	
+//	@RequestMapping("/req_ex01")
+//	public String ex01() {
+//		
+//		return "/req_ex01"; //화면경로
+//	}
+}

@@ -1,0 +1,7 @@
+package ex02.constructor;
+
+public class Hotel {
+	
+	private Chef chef;
+
+}

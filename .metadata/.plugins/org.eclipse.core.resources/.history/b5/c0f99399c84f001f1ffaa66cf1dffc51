@@ -1,0 +1,87 @@
+package ex04.quiz;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+public class Computer {
+	
+	//컴퓨터 클래스는 마우스,키보드,모니터 의존적임
+	//컴퓨터 클래스에 의존객체 자동주입 명령을 이용해서, 주입되도록 처리하고, Main에서 computerInfo메서드를 호출
+
+	@Autowired
+	@Qualifier("mouse")
+	private Mouse mouse;
+
+	@Autowired
+	@Qualifier("kb")
+	private Keyboard kb;
+
+	@Autowired
+	@Qualifier("monitor")
+	private Monitor monitor;
+	
+	public Computer() {
+		
+	}
+	
+	//생성자 주입
+	public Computer(Mouse mouse) {
+		this.mouse = mouse;
+	}
+	
+	public Computer(Keyboard kb) {
+		this.kb = kb;
+	}
+	
+	public Computer(Monitor monitor) {
+		this.monitor = monitor;
+	}
+
+	
+	//setter,getter
+	public Mouse getMouse() {
+		return mouse;
+	}
+
+
+
+	public void setMouse(Mouse mouse) {
+		this.mouse = mouse;
+	}
+
+
+
+	public Keyboard getKb() {
+		return kb;
+	}
+
+
+
+	public void setKb(Keyboard kb) {
+		this.kb = kb;
+	}
+
+
+
+	public Monitor getMonitor() {
+		return monitor;
+	}
+
+
+
+	public void setMonitor(Monitor monitor) {
+		this.monitor = monitor;
+	}
+
+
+
+	public void computerInfo() {
+		System.out.println("***컴퓨터 정보***");
+		mouse.info();
+		kb.info();
+		monitor.info();
+	}
+	
+	
+	
+}
