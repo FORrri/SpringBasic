@@ -76,7 +76,7 @@ public class ResponseController {
 			
 	}
 	@RequestMapping(value="/loginForm", method= RequestMethod.POST)
-	public String loginForm( MemberVO vo, RedirectAttributes ra) {
+	public String loginForm(MemberVO vo, RedirectAttributes ra) {
 		
 		//id랑 pw가 동일하면 로그인 성공
 		

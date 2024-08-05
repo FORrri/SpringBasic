@@ -1,0 +1,36 @@
+package com.simple.basic.service.board;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.simple.basic.command.BoardVO;
+
+@Service("board")
+public class BoardServiceImpl implements BoardService {
+
+	
+	@Autowired
+	private BoardMapper boardMapper;
+	
+	@Override
+	public void regist(BoardVO vo) {
+		boardMapper.regist(vo);
+		
+	}
+
+	@Override
+	public ArrayList<BoardVO> getBoard() {
+		return BoardMapper.getBoard();
+		
+	}
+
+	@Override
+	public void delete(int num) {
+		boardMapper.delete(num);
+		
+	}
+		
+	
+	
+	
+}

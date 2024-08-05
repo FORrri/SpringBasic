@@ -9,24 +9,42 @@ import org.springframework.stereotype.Service;
 import com.simple.basic.command.ScoreVO;
 import com.simple.basic.service.score.impl.ScoreDAO;
 
-@Service("x") //구현체에다가 서비스 적어주기 //반드시 component-scan에 의하여 읽혀야함
+@Service("x") //직접 빈 생성X -> 구현체에다가 서비스만 적어주면 ok 
+			  //반드시 component-scan에 의하여 읽혀야함
+			 //ScoreController과 변수 맞추면서 같이 보기
 public class ScoreServiceImpl implements ScoreService {
 	
+//	@Autowired
+//	@Qualifier("y")
+//	ScoreDAO scoreDAO; //Mybatis 쓰면 DAO는 필요없음
+	
 	@Autowired
-	@Qualifier("y")
-	ScoreDAO scoreDAO;
+	private ScoreMapper scoreMapper;
 
 	@Override
 	public void regist(ScoreVO vo) {
 		//System.out.println("service layer:" + vo);
 		//DAO계층으로....
-		scoreDAO.regist(vo);
+		System.out.println("regist메서드 동작");
+		scoreMapper.regist(vo);
 		
 	}
 	
 	@Override
 	public ArrayList<ScoreVO> getScore() {
-		return scoreDAO.getScore();
+		System.out.println("getScore메서드 동작");
+		
+		//String str = null;
+		//str.charAt(0);
+		
+		return scoreMapper.getScore();
+	}
+	
+	@Override
+	public void delete(int sno) {
+		System.out.println("delete메서드 동작");
+		scoreMapper.delete(sno);
+		
 	}
 	
 

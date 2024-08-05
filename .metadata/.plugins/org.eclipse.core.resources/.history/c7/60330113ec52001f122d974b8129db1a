@@ -1,0 +1,16 @@
+package com.simple.basic.command;
+
+public class ScoreVO {
+	
+	private int sno;
+	private String name;
+	private String kor; //공백 문제가 생길수 있기 때문에 int말고 string으로 써주기
+	private String eng;
+	private String math;
+	
+
+	
+	
+	
+	
+}

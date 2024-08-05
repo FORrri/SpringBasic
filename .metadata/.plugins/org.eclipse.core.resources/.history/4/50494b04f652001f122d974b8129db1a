@@ -1,0 +1,32 @@
+package com.simple.basic.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.simple.basic.command.BoardVO;
+import com.simple.basic.service.score.BoardService;
+
+@Controller
+@RequestMapping("/board")
+public class BoardServiceController {
+	
+	@Autowired
+	@Qualifier("board")
+	BoardService boardservice;
+	
+	//등록
+	@RequestMapping("/boardRegist")
+	public String boardRegist() {
+		return "service/boardRegist";
+	}
+	
+	@RequestMapping()
+	public String info(@ModelAttribute("info") BoardVO vo) {
+		
+		return "/board/boardRegist";
+	}
+	
+}

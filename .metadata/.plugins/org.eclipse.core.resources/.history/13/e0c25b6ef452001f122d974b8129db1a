@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="com.simple.basic.service.board.BoardMapper">
+  
+    <insert id="regist" parameterType="BoardVO">
+  		INSERT INTO SCORE(SNO, NAME, KOR, ENG, MATH)
+  		VALUES(SCORE_SEQ.NEXTVAL, #{name}, ${kor}, ${eng}, ${math} )
+  	</insert>
+
+  	
+  	<select id="getScore" resultType="BoardVO">
+  		SELECT * FROM SCORE ORDER BY SNO DESC
+  	</select>
+ 
+  	<delete id="delete" parameterType="int">
+  		DELETE FROM SCORE WHERE SNO = #{sno}
+  	</delete>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </mapper>

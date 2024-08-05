@@ -1,0 +1,12 @@
+package com.simple.basic.command;
+
+public class BoardVO {
+
+	private int sno;
+	private String name;
+	private String title;
+	private String content;
+	
+
+	
+}

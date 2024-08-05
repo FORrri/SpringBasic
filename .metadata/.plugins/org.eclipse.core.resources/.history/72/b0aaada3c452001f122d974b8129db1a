@@ -1,0 +1,43 @@
+package com.simple.basic.service.score;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import com.simple.basic.command.ScoreVO;
+import com.simple.basic.service.score.impl.ScoreDAO;
+
+@Service("x") //직접 빈 생성X -> 구현체에다가 서비스만 적어주면 ok 
+			  //반드시 component-scan에 의하여 읽혀야함
+			 //ScoreController과 변수 맞추면서 같이 보기
+public class ScoreServiceImpl implements ScoreService {
+	
+	@Autowired
+	@Qualifier("y")
+	ScoreDAO scoreDAO;
+
+	@Override
+	public void regist(ScoreVO vo) {
+		//System.out.println("service layer:" + vo);
+		//DAO계층으로....
+		scoreDAO.regist(vo);
+		
+	}
+	
+	@Override
+	public ArrayList<ScoreVO> getScore() {
+		return scoreDAO.getScore();
+	}
+	
+	@Override
+	public void delete(int sno) {
+		list.remove(sno); //인덱스번호로 삭제
+		
+	}
+	
+
+	
+	
+}

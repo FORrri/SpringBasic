@@ -1,0 +1,6 @@
+package com.simple.basic.service.board;
+
+public class Snippet {
+	getScore();
+}
+

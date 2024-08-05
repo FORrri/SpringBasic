@@ -1,0 +1,6 @@
+#로컬데이터베이스(공백있으면X)
+#root-context 파일은 외부 공개, 이건 중요한 파일이니까 비공개
+ds.drverclassname=oracle.jdbc.OracleDriver
+ds.jdbcurl=jdbc:oracle:thin:@localhost:1521:xe
+ds.username=JSP
+ds.password=JSP

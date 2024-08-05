@@ -2,6 +2,7 @@ package com.simple.basic.command;
 
 public class ScoreVO {
 	
+	private int sno;
 	private String name;
 	private String kor; //공백 문제가 생길수 있기 때문에 int말고 string으로 써주기
 	private String eng;
@@ -10,13 +11,23 @@ public class ScoreVO {
 	public ScoreVO() {
 		
 	}
+	
 
-	public ScoreVO(String name, String kor, String eng, String math) {
+	public ScoreVO(int sno, String name, String kor, String eng, String math) {
 		super();
+		this.sno = sno;
 		this.name = name;
 		this.kor = kor;
 		this.eng = eng;
 		this.math = math;
+	}
+
+	public int getSno() {
+		return sno;
+	}
+
+	public void setSno(int sno) {
+		this.sno = sno;
 	}
 
 	public String getName() {
@@ -51,7 +62,6 @@ public class ScoreVO {
 		this.math = math;
 	}
 	
-	
-	
+
 	
 }
