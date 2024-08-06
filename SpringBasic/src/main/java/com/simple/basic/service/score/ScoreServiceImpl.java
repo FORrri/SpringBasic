@@ -2,17 +2,23 @@ package com.simple.basic.service.score;
 
 import java.util.ArrayList;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.simple.basic.command.ScoreVO;
 import com.simple.basic.service.score.impl.ScoreDAO;
+import com.simple.basic.util.aop.LogAdvice;
 
 @Service("x") //직접 빈 생성X -> 구현체에다가 서비스만 적어주면 ok 
 			  //반드시 component-scan에 의하여 읽혀야함
 			 //ScoreController과 변수 맞추면서 같이 보기
 public class ScoreServiceImpl implements ScoreService {
+	
+	//해당 클래스에서 로그를 사용함 (base패키지)
+	public static final Logger log = LoggerFactory.getLogger(ScoreServiceImpl.class);
 	
 //	@Autowired
 //	@Qualifier("y")

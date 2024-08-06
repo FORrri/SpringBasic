@@ -13,19 +13,20 @@
 		<property name="location" value="classpath:/db-config/application.properties" />
 	</bean>
 		
-		<!-- DB 연결 커넥션 풀을 bean 으로 미리 생성 (DataSource, HikariCP) -->
+	<!-- DB 연결 커넥션 풀을 bean 으로 미리 생성 (DataSource, HikariCP) -->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="${ds.drverclassname}" />
 		<property name="jdbcUrl" value="${ds.jdbcurl}" />
 		<property name="username" value="${ds.username}"/> <!-- 별로 안쓸거니까 JSP로 / 원래는 따로 만들어줘야함 -->
 		<property name="password" value="${ds.password}"/>		
 	</bean>
-		<!-- 커넥션 풀 의존성 주입 -->
+	
+	<!-- 커넥션 풀 의존성 주입 -->
 	<bean id="ds" class="com.zaxxer.hikari.HikariDataSource">
 		<constructor-arg ref="hikariConfig"/>
 	</bean>
 		
-		<!-- 마이바티스 mapper를 전역관리하는 factory bean -->
+	<!-- 마이바티스 mapper를 전역관리하는 factory bean -->
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- 디비정보 -->
