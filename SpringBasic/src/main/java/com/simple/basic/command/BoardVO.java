@@ -8,7 +8,7 @@ public class BoardVO {
 	private String content;
 	
 	public BoardVO() {
-
+		// TODO Auto-generated constructor stub
 	}
 
 	public BoardVO(int num, String name, String title, String content) {
@@ -50,7 +50,6 @@ public class BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
 	
 	
 

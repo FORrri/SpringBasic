@@ -6,17 +6,17 @@
   <mapper namespace="com.simple.basic.service.board.BoardMapper">
   
   <insert id="regist" parameterType="BoardVO">
-  	INSERT INTO BOARD(NUM, NAME, TITLE, CONTENT)
-  	VALUES(BOARD_SEQ.NEXTVAL, #{name}, #{title}, #{content} )
+  	INSERT INTO SBOARD(NUM, NAME, TITLE, CONTENT)
+  	VALUES(SBOARD_SEQ.NEXTVAL, #{name}, #{title}, #{content} )
   </insert>
   
   
   <select id="getBoard" resultType="BoardVO">
-  	SELECT * FROM BOARD ORDER BY NUM DESC
+  	SELECT * FROM SBOARD ORDER BY NUM DESC
   </select>
   
-  <delete id="delete" parameterMap="int">
-  	DELETE FROM BOARD WHERE NUM = #{num}
+  <delete id="delete" parameterType="int">
+  	DELETE FROM SBOARD WHERE NUM = #{num}
   </delete>
     
   </mapper>

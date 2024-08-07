@@ -19,7 +19,7 @@ public class BoardServiceController {
 
 	@Autowired
 	@Qualifier("board")
-	private BoardService boardService;
+	BoardService boardService;
 	
 	
 	//등록

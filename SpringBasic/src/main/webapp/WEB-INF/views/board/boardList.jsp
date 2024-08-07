@@ -20,15 +20,21 @@
 			<td>비고</td>
 		</tr>
 		
+		   
 		
-		반복문 출력~~
+		
+		
+		<c:forEach var="vo" items="${list }">
+		
 		<tr>
-			<td>~~</td>
-			<td>~~</td>
-			<td>~~</td>
-			<td>~~</td>
-			<td><input type="button" value="삭제" onclick=""></td>
+			<td>${vo.num } </td>
+			<td>이름: ${vo.name }</td>
+			<td>제목: ${vo.title }</td>
+			<td>내용: ${vo.content }</td>
+			<td><input type="button" value="삭제" onclick="location.href='boardDelete?num=${vo.num }';"></td>
 		</tr>
+		
+		</c:forEach>
 
 			<!-- 
 			1. boardDelete로 삭제 처리하세요. 
@@ -37,7 +43,7 @@
 	</table>
 	
 	<%--게시글 작성페이지로 이동시키세요. --%>
-	<a href="">게시글 작성</a>
+	<a href="boardRegister">게시글 작성</a>
 	
 	
 	

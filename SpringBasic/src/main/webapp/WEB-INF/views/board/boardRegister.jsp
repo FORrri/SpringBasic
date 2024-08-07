@@ -42,7 +42,7 @@ create SEQUENCE SBOARD_SEQ INCREMENT by 1 start with 1 nocache;
 		2.service계층 -DAO계층 연동을 통해 게시글 목록을 가지고 boardList 페이지로 이동하세요.
 		3.boardList 페이지에서는 게시글 목록을 화면에 출력하세요
 		--%>
-		<input type="button" value="목록" onclick="">
+		<input type="button" value="목록" onclick="location.href='boardList';">
 	</form>
 
 
